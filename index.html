@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecting...</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #0f172a;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    .countdown-circle {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: rgba(59, 130, 246, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      animation: pulse 1s ease-in-out infinite;
+    }
+
+    .countdown-number {
+      font-size: 32px;
+      font-weight: 700;
+      color: #3b82f6;
+    }
+
+    .redirect-text {
+      color: #94a3b8;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .progress-bar {
+      width: 200px;
+      height: 4px;
+      background: #1e293b;
+      border-radius: 4px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: #3b82f6;
+      border-radius: 4px;
+      width: 0%;
+      transition: width 1s linear;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="countdown-circle">
+      <span class="countdown-number" id="countdown">3</span>
+    </div>
+    <p class="redirect-text">Redirecting...</p>
+    <div class="progress-bar">
+      <div class="progress-fill" id="progress"></div>
+    </div>
+  </div>
+
+  <script>
+    var links = [
+      "https://www.profitablecpmratenetwork.com/xa4v69ebp?key=62079b05ebf5a63f468e7017849264af",
+      "https://www.profitablecpmratenetwork.com/ks7uqun55?key=0e5286d226dda1a44faa33a3cc257512",
+      "https://www.profitablecpmratenetwork.com/h0mekvtr?key=d05865eb775b320717971d5a2fa6be21",
+      "https://www.profitablecpmratenetwork.com/wfgse0gu0?key=dfa595cebf5450be98481dd0467d958f",
+      "https://www.profitablecpmratenetwork.com/uvzsmhf6s1?key=3620a4de4c47107c53adf379f9659784"
+    ];
+
+    var target = links[Math.floor(Math.random() * links.length)];
+    var count = 3;
+    var countdownEl = document.getElementById("countdown");
+    var progressEl = document.getElementById("progress");
+
+    // Start progress bar
+    setTimeout(function () {
+      progressEl.style.width = "33%";
+    }, 50);
+
+    var timer = setInterval(function () {
+      count--;
+      countdownEl.textContent = count;
+      progressEl.style.width = ((3 - count) / 3 * 100) + "%";
+
+      if (count <= 0) {
+        clearInterval(timer);
+        window.location.href = target;
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
