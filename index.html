@@ -92,7 +92,7 @@
     ];
 
     var target = links[Math.floor(Math.random() * links.length)];
-    var count = 3;
+    var count = 2;
     var countdownEl = document.getElementById("countdown");
     var progressEl = document.getElementById("progress");
 
@@ -104,7 +104,7 @@
     var timer = setInterval(function () {
       count--;
       countdownEl.textContent = count;
-      progressEl.style.width = ((3 - count) / 3 * 100) + "%";
+      progressEl.style.width = ((2 - count) / 2 * 100) + "%";
 
       if (count <= 0) {
         clearInterval(timer);
